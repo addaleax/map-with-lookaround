@@ -1,6 +1,9 @@
 'use strict';
 
-function* MapWithLookaround(it, map, lookbehind=1, lookahead=1) {
+function* MapWithLookaround(it, map, lookbehind, lookahead) {
+  if (typeof lookbehind === 'undefined') lookbehind = 1;
+  if (typeof lookahead === 'undefined') lookahead = 1;
+
   const behind = [], ahead = [];
 
   let done = false;

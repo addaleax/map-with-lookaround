@@ -14,7 +14,7 @@ describe('mapWithLookaround', function() {
       return { element, behind: behind.slice(), ahead: ahead.slice() };
     }, 2, 4);
 
-    assert.deepStrictEqual([...mapped], [
+    assert.deepStrictEqual(Array.from(mapped), [
       {"element":10,"behind":[],"ahead":[11,12,13,14]},
       {"element":11,"behind":[10],"ahead":[12,13,14,15]},
       {"element":12,"behind":[10,11],"ahead":[13,14,15,16]},
@@ -38,7 +38,7 @@ describe('mapWithLookaround', function() {
       return { element, behind: behind.slice(), ahead: ahead.slice() };
     });
 
-    assert.deepStrictEqual([...mapped], [
+    assert.deepStrictEqual(Array.from(mapped), [
       {"element":10,"behind":[],"ahead":[11]},
       {"element":11,"behind":[10],"ahead":[12]},
       {"element":12,"behind":[11],"ahead":[13]},
